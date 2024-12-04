@@ -116,6 +116,46 @@ limit 3;
     -- 2. 教練`肌肉棒子` 需要有 `瑜伽` 專長
     -- 3. 教練`Q太郎` 需要有 `有氧運動` 與 `復健訓練` 專長
 
+    --3-2.1
+        insert into "COACH_LINK_SKILL" (coach_id, skill_id) values 
+        (
+            (select id from "COACH" where user_id = (select id from "USER" where email = 'lee2000@hexschooltest.io')),
+            (select id from "SKILL" where name = '重訓')
+        );
+
+        insert into "COACH_LINK_SKILL" (coach_id, skill_id) values 
+        (
+            (select id from "COACH" where user_id = (select id from "USER" where email = 'muscle@hexschooltest.io')),
+            (select id from "SKILL" where name = '重訓')
+        );
+
+        insert into "COACH_LINK_SKILL" (coach_id, skill_id) values 
+        (
+            (select id from "COACH" where user_id = (select id from "USER" where email = 'starplatinum@hexschooltest.io')),
+            (select id from "SKILL" where name = '重訓')
+        );
+
+    --3-2.2 
+        insert into "COACH_LINK_SKILL" (coach_id, skill_id) values 
+        (
+            (select id from "COACH" where user_id = (select id from "USER" where email = 'muscle@hexschooltest.io')),
+            (select id from "SKILL" where name = '瑜伽')
+        );
+
+    --3-2.3    
+        insert into "COACH_LINK_SKILL" (coach_id, skill_id) values 
+        (
+            (select id from "COACH" where user_id = (select id from "USER" where email = 'starplatinum@hexschooltest.io')),
+            (select id from "SKILL" where name = '有氧運動')
+        );
+
+        insert into "COACH_LINK_SKILL" (coach_id, skill_id) values 
+        (
+            (select id from "COACH" where user_id = (select id from "USER" where email = 'starplatinum@hexschooltest.io')),
+            (select id from "SKILL" where name = '復健訓練')
+        );
+
+
 -- 3-3 修改：更新教練的經驗年數，資料需求如下：
     -- 1. 教練`肌肉棒子` 的經驗年數為3年
     -- 2. 教練`Q太郎` 的經驗年數為5年
